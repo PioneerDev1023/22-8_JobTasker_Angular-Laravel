@@ -1,0 +1,121 @@
+.offer-box {
+    display: flex;
+    border: solid 2px #8d8d8d;
+    height: 50px;
+    width: 277px;
+    margin: auto;
+}
+.doller-box {
+    font-size: 20px;
+    padding: 10px 15px;
+    border-right: solid 1px;
+}
+input.offer-amounts {
+    border-width: 0;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+}
+input.offer-amounts:focus-visible {
+    border-width: 0;
+}
+.offer-bottom {
+    padding: 20px;
+    .service-tax {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        span {
+            color: #8d8d8d;
+        }
+    }
+    .service-tax:last-child {
+        margin-top: 10px;
+    }
+}
+.offer-final {
+    padding: 5px 20px;
+    .final-amount {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        span {
+            color: #1596AF;
+        }
+    }
+}
+.offer-button {
+    width: 183px;
+    margin: auto;
+    position: absolute;
+    top: 225px;
+    left: 41%;
+}
+.iyyxHC {
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .search_job_nav{
+        &.active{
+            #navbarSupportedContent,.navbar-nav{
+                display: initial;
+                 .dropdown:hover > ul {
+                    width: 100% !important;
+                    left: 0;
+                }
+            }
+
+        }
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+    }
+    #mainnn {
+      
+        padding: 15px;
+        &.mx-5{
+            margin: 0 !important;
+        }
+        #sidescrol {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+    #mapcard_div {
+      display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    #mainnn {
+        padding: 10px 0;
+        #maincard{
+            .card-body{
+                .card-title{
+                    font-size: 1.3rem !important;
+                }
+                .menu{
+                    .online{
+                        line-height: 1.2;
+                        i,span{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .avtar{
+                   img{
+                    max-height: 100% !important;
+                     max-width: 100% !important;
+                   }
+                }
+                .offer-div{
+                    i,span{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

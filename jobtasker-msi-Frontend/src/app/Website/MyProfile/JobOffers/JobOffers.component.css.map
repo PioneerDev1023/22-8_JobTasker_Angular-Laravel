@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACN,WAAW,EAAE,IAAI;CACpB;;AACD,AAAA,YAAY,CAAC;EACT,gBAAgB,EAAE,kBAAkB;CACvC;;AACD,AAAA,KAAK,CAAC;EACF,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,KAAK;CACjB",
+    "sources": [
+        "JobOffers.component.scss"
+    ],
+    "names": [],
+    "file": "JobOffers.component.css"
+}

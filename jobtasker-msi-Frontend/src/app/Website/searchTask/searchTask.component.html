@@ -1,0 +1,629 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-dark py-1 search_job_nav" [ngClass]="status ? 'active' : 'notActive'">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="clickEvent()"> 
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-2" style="padding-left: 6vw;" id="navbarSupportedContent">
+            <div class="d-flex">
+                <input class="form-control me-1" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
+                <div class="btn btn-outline-light" (click)="search()"><i class="bi bi-search"></i></div>
+            </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5">
+                <li class="nav-item dropdown mx-2 px-2">
+                    <a class="nav-link dropdown-toggle text-white fw-normal" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        50km Ahmedabad &amp; remotely
+                    </a>
+                    <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown" style="width: 25vw;">
+                        <li class="w-100">
+                            <span style="font-size: smaller;">TO BE DONE</span>
+                            <div class="box d-inline-flex p-1 mt-3 w-100">
+                                <button type="button" class="btn btn-outline-primary mx-1">In Person </button>
+                                <button type="button" class="btn btn-outline-primary mx-1">Remotely</button>
+                                <button type="button" class="btn btn-outline-primary mx-1">All</button>
+                            </div>
+                        </li>
+                        <!-- <li class="mt-3 w-100">
+                            <span style="font-size: smaller;">SUBURB</span>
+                            <div class="box d-flex p2-1 mt-3">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" style="width: 19vw;"
+                                        placeholder="Enter a Suburb">
+                                </div>
+                            </div>
+                        </li> -->
+                        <!-- <li class="text-center mt-4 w-100">
+                            <span style="font-size: smaller;">DISTANCE</span>
+                            <input type="range" class="form-range" id="customRange1">
+                        </li> -->
+                        <li class="w-100">
+                            <div class="mt-4" style="display: flex; justify-content: space-between;">
+                                <a class="nav-link scrollto" href="#">Cancle</a>
+                                <a class="getstarted scrollto text-white" href="#">Apply</a>
+                            </div>
+                        </li>
+                        <!-- <div class="d-flex justify-content-sm-between">
+                          <a class="nav-link scrollto" href="#">Cancle</a>
+                          <a class="getstarted scrollto text-white" href="#">Apply</a>
+                      </div> -->
+                    </ul>
+                </li>
+
+                <!-- <li class="nav-item dropdown mx-2 px-2">
+                    <a class="nav-link dropdown-toggle text-white fw-normal" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Any price </a>
+                    <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown" style="width: 22vw;">
+                        <span style="font-size: smaller;"> TASK PRICE</span>
+
+                        <li class="text-center mt-4 w-100">
+                            <div class="min-max-slider" data-legendnum="2" data-rangemin="5" data-rangemax="9999"
+                                data-thumbsize="14" data-rangewidth="304" style="height: 66px;">
+                                <span class="lower value"></span><span class="upper value"></span><label
+                                    for="min">Minimum price</label>
+                                <input id="min" class="min" name="min" type="range" step="1" min="5" max="5002"
+                                    data-value="5" style="width: 152px; left: 0px; top: 27px;">
+                                <label for="max">Maximum price</label>
+                                <input id="max" class="max" name="max" type="range" step="1" min="5002" max="9999"
+                                    data-value="9999" style="width: 152px; left: 152px; top: 27px;">
+                                <div class="legend" style="margin-top: 20px;">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="w-100">
+                            <div class="d-flex justify-content-sm-between mt-3">
+                                <a class="nav-link scrollto" href="#">Cancle</a>
+                                <a class="getstarted scrollto text-white" href="#">Apply</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li> -->
+
+                <!-- <li class="nav-item dropdown mx-2 px-2">
+                    <a class="nav-link dropdown-toggle text-white fw-normal" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Other filters
+                    </a>
+                    <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown" style="width: 22vw;">
+                        <span style="font-size: smaller;"> OTHER FILTERS</span>
+                        <li class="w-100">
+                            <div class="box d-flex pt-1 mt-3">
+                                <div class="box w-100 mx-1">
+                                    <h6 class="">Available tasks
+                                        only</h6>
+                                    <p style="font-size: small;" class="pb-0">Hide tasks that
+                                        are already assigned</p>
+                                </div>
+                                <div class="box">
+                                    <div class="form-check form-switch mx-2">
+                                        <input style="width: 3vw; height: 3vh;" class="form-check-input" type="checkbox"
+                                            role="switch" id="flexSwitchCheckDefault">
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </li>
+                        <hr class="m-0 p-0" style=" width: 100%; border-style: solid; border-color: rgb(3, 3, 3);">
+                        <li class="w-100">
+                            <div class="box d-flex pt-1 mt-2">
+                                <div class="box w-100 mx-1">
+                                    <h6 class="">Tasks with no offers only
+                                    </h6>
+                                    <p style="font-size: small;" class="pb-0">Hide tasks that have
+                                        offers</p>
+                                </div>
+                                <div class="box" style="padding-left: 7px;">
+                                    <div class="form-check form-switch mx-2">
+                                        <input style="width: 3vw; height: 3vh;" class="form-check-input" type="checkbox"
+                                            role="switch" id="flexSwitchCheckDefault">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <hr style=" width: 100%; border-style: solid; border-color: rgb(3, 3, 3);">
+                        <div class="d-flex justify-content-sm-between w-100">
+                            <a class="nav-link scrollto" href="#">Cancle</a>
+                            <a class="getstarted scrollto text-white" href="#">Apply</a>
+                        </div>
+                    </ul>
+                </li> -->
+
+                <li class="nav-item dropdown mx-2 px-2 w-100">
+                    <a class="nav-link dropdown-toggle text-white fw-normal" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort Price and Task<span class="badge bg-primary mx-2">New</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" (click)="priceHightToLow()">Price: High to low</a></li>
+                        <li><a class="dropdown-item" (click)="priceLowToHigh()">Price: Low to high</a></li>
+                        <li><a class="dropdown-item" (click)="dueDateEarly()">Due date: Earliest</a></li>
+                        <li><a class="dropdown-item" (click)="dueDateLast()">Due date: Latest</a></li>
+                        <li><a class="dropdown-item" (click)="newTask()">Newest tasks</a></li>
+                        <li><a class="dropdown-item" (click)="oldTask()">Oldest tasks</a></li>
+                        <li><a class="dropdown-item" (click)="closeToMe()">Closest to me</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="row d-flex justify-content-center bg-light mx-5" id="mainnn">
+    <div class="col-3 mapsidebar" id="sidescrol" style="max-height: 80vh; overflow: hidden; overflow: scroll;">
+        <!-- <div class="div">
+          <button>
+              <span>3</span> <span>New Tasks</span>
+          </button>
+      </div> -->
+        <div class="card border-primary my-1" id="maincard" style="cursor: pointer;" *ngFor="let item of jobList | tableFilter: searchText">
+
+            <div class="card-body pb-1">
+                <h6 class="card-title text-primary" (click)="selectJobPost(item.id)">{{ item.what_do_you }}</h6>
+                <div class="contain row">
+                    <div class="menu col-8">
+                        <div class="online"
+                            style="-webkit-font-smoothing: antialiased; color: #000000; font-size: 110%; font-weight: 400;">
+                            <i class="bi bi-info-circle"></i>
+                            <span style="vertical-align: middle">
+                                {{ item.where_do_you }}</span>
+                        </div>
+                        <div class="online"
+                            style="-webkit-font-smoothing: antialiased; color: #000000; font-size: 110%; font-weight: 400;">
+                            <i class="bi bi-calendar-event"></i>
+                            <span style="display: inline-block; margin-left: 7px; vertical-align: middle;"> {{
+                                item.created_at | date }} </span>
+                        </div>
+
+                    </div>
+                    <div class="avtar col-4"
+                        style="float: right; border-radius: 50%; display: inline-block; position: relative;">
+                        <img [src]="url + item.posted_by_id" alt=""
+                            style="border: 1px solid #bbc2dc; border-radius: 50%; display: block; margin: 0 auto; max-height: 80%; max-width: 80%;">
+                    </div>
+                </div>
+                <hr class="mt-1 mb-0 p-0" style=" width: 100%; border-style: solid; border-color: rgb(3, 3, 3);">
+                <div class="m-0 p-0 text-dark offer-div" style="display: flex; justify-content: space-between;">
+                    <div class=" d-flex align-items-center"><span class="text-success">Open </span> <i
+                            class="bi bi-dot"></i><span> {{ item.total_offer.length }} Offer</span></div>
+                    <span class="text-primary fs-5">${{ item.budget }}</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="task-right col-9 px-0"
+        style="overflow: hidden; overflow: scroll; border: 0.5px rgb(36, 35, 35) solid; max-height: 80vh;"
+        id="mapcard_div">
+        <div id="map_div" [ngClass]="{'card_post_show': card_show == false}"
+            [ngClass]="{'card_post_hide': card_show == true}">
+            <div class="map-responsive">
+                <!-- <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.2153202919435!2d72.56274514929147!3d23.089212384845364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83c920483b19%3A0x403c61bbba9824f9!2sAGM%20Etech%20Private%20Limited!5e0!3m2!1sen!2sin!4v1646230856994!5m2!1sen!2sin"
+                    width="400" height="300" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+                    
+                    <div *ngIf="markers">    
+                        <agm-map 
+                        [latitude]='lat' 
+                        [longitude]='long'
+                        [zoom]='zoom'
+                        >
+                            <agm-marker 
+                                *ngFor="let marker of markers" 
+                                [latitude]="marker.lat" 
+                                [longitude]="marker.lng">    
+                                    <agm-info-window #infoWindow>
+                                        {{ marker.label }}
+                                    </agm-info-window>
+                            </agm-marker>
+                        </agm-map>
+                    </div>
+
+            </div>
+        </div>
+
+        <button type="button" class="btn-close float-end " (click)="closeJobPost()" aria-label="Close"></button>
+        <div class="mt-0 aos-init aos-animate" id="card_div" data-aos="fade-left"
+            [ngClass]="{'card_post_show':  card_show == true}" *ngIf="selectJobPostData">
+            <div class="details-panel" style="border: #000000;">
+                <div class="step-bar-holder">
+                    <div class="task_details_step_bar__Container-sc-1d7g3xl-0 kqzgXu">
+                        <span data-ui-test="completed-task-state"
+                            class="task_details_step_bar__Step-sc-1d7g3xl-1 iaJMa-D" [ngClass]="{'hpnYGc': selectJobPostData.status == 'OPEN'}">
+                            <span class="RiBCG">Open</span>
+                        </span>
+                        <span data-ui-test="pending-task-state"
+                            class="task_details_step_bar__Step-sc-1d7g3xl-1 iaJMa-D" [ngClass]="{'hpnYGc': selectJobPostData.status == 'ASSIGNED'}">
+                            <span class="RiBCG">Awarded</span>
+                        </span>
+                        <span data-ui-test="pending-task-state"
+                            class="task_details_step_bar__Step-sc-1d7g3xl-1 iaJMa-D" [ngClass]="{'hpnYGc': selectJobPostData.status == 'COMPLETED'}">
+                            <span class="RiBCG">Completed</span>
+                        </span>
+                    </div>
+                    <!-- <button type="button" class="follow-button button-icon button-slim right bg-primary p-2"
+                        onclick="myfollow()">
+                        <span id="flw" class="text-white"><i class="bi bi-heart-fill"></i> Follow</span>
+                        <span class="d-none" id="flwng"><i class="bi bi-heart"></i> Following</span>
+                    </button> -->
+                </div>
+                <h1 id="h1TitleMainDiv" class="task-title text-h2" data-ui-test="task-details-title">{{
+                    selectJobPostData.what_do_you }}</h1><button type="button" data-ui-test="close-button"
+                    class="Button__StyledButton-sc-117jcbc-0 kmYAKK TaskDetailsHeader__StyledCloseButton-pawc5j-0 iXqjbI"><svg
+                        width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M7.14 12a.9.9 0 01.25-.61l8-8a.86.86 0 111.22 1.22L9.21 12l7.4 7.39a.86.86 0 01-1.22 1.22l-8-8a.9.9 0 01-.25-.61z">
+                        </path>
+                    </svg>
+                    <p class="jwSLgt">Return to map</p>
+                </button>
+                <div class="posted-details-holder">
+                    <div class="posted-detail-item posted-details-item">
+                        <div class="avatar-img"><img [src]="url + selectJobPostData.posted_by_id" alt="" width="32" height="32"></div>
+                        <div class="posted-details">
+                            <div><span class="bold small-title">Posted by</span> <span class="user-name-holder"><a
+                                        href="/users/f18b1630fdf8-p-26404332/" class="user-name"
+                                        data-ui-test="user-name">{{ selectJobPostData.posted_by.first_name }} {{ selectJobPostData.posted_by.last_name }}</a></span></div>
+                            <div class="small"><time itemprop="" datetime="about 1 hour ago" *ngIf="postTime"> Time : {{ postTime }}</time>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-item posted-details-item">
+                        <img src="assets/img/locationicon.png" alt="">
+                        <div class="location-information task-header-info-section">
+                            <p class="title small-title">Location</p>
+                            <p class="text">{{selectJobPostData.where_do_you }}</p>
+                        </div>
+                    </div>
+                    <div class="propose-time-holder posted-details-item">
+                        <div class="proposed-time-item clearfix"><svg class="calendar" width="25" height="25"
+                                fill="#bbc2dc" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 3.59h-3.25v-.93a.75.75 0 10-1.5 0v.93h-6.5v-.93a.75.75 0 10-1.5 0v.93H4a2.75 2.75 0 00-2.75 2.75v13A2.75 2.75 0 004 22.09h16a2.75 2.75 0 002.75-2.75v-13A2.75 2.75 0 0020 3.59zM4 5.09h3.25v1.07a.75.75 0 001.5 0V5.09h6.5v1.07a.75.75 0 001.5 0V5.09H20a1.25 1.25 0 011.25 1.25v2.25H2.75V6.34A1.25 1.25 0 014 5.09zm17.25 14.25A1.25 1.25 0 0120 20.59H4a1.25 1.25 0 01-1.25-1.25v-9.25h18.5z">
+                                </path>
+                                <path
+                                    d="M8 16.84a2.5 2.5 0 10-2.5-2.5 2.5 2.5 0 002.5 2.5zm0-3.5a1 1 0 11-1 1 1 1 0 011-1z">
+                                </path>
+                            </svg>
+                            <div class="time-slot-information">
+                                <div class="planned-for small-title">Due date</div>
+                                <div class="time-date" data-ui-test="task-date">{{ selectJobPostData.required_Date |
+                                    date:'fullDate' }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="posted-details-item"><span
+                            class="Disclaimer__StyledMarkdown-fetirt-0 chTTMe"><strong>GOVERNMENT COVID-19
+                                RESTRICTIONS HAVE CHANGED.</strong> Your task may be impacted. See <a
+                                class="Link__Anchor-sc-1xsb1mu-0 kbxwxQ Link-sc-1xsb1mu-3 jJQOTC"
+                                href="https://www.airtasker.com/blog/covid-19-safety-central-hub/">Safety Centre</a>
+                            for info.</span>
+                    </div> -->
+                </div>
+            </div>
+
+
+            <div class="sidebart center" data-ui-test="task-details-sidebar" style="float: right;">
+                <div class="PaymentPanel__Wrapper-sc-1547znv-0 jSCYrF" data-ui-test="task-details-payment-panel">
+                    <div class="PaymentPanelTitle__TitleWrapper-sc-9v4zxh-0 kGKxNI">Task Budget</div>
+                    <div class="PaymentPanelPrice__PriceWrapper-sc-4jtivt-0 fnfPZT">
+                        <div class="PaymentPanelPrice__TaskPriceWrapper-sc-4jtivt-1 lklfni">
+                            <div class="task-price">
+                                <div class="currency-symbol">
+                                    <div class="price text-h2"><span data-ui-test="task-price" id="spntaskamt">${{
+                                            selectJobPostData.budget }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="PaymentPanel__CtaWrapper-sc-1547znv-1 FXIHp"  *ngIf="selectJobPostData.status == 'OPEN'">
+                        <span *ngIf="currentUserId != selectJobPostData.posted_by_id">
+                            <span *ngIf="!isPoster">
+                                <button type="button" (click)="openModal(template)" class="Button__StyledButton-sc-117jcbc-0 cHLbqz w-75">Make an offer</button>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="task-options" data-ui-test="task-options">
+                    <div class="dropdown-holder undefined">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                More Option
+                            </button>
+                            <ul class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Post a Similar task</a></li>
+                                <hr class="my-1 p-0">
+                                <li><a class="dropdown-item" href="#">set up Alerts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="flag-content mt-1 pt-4" (click)="openModalReport(report)">
+                    <i class="bi bi-flag px-3"></i>
+                    <span style="color:black">Report this task</span>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="iyyxHC d-inline-block">
+                <div class="hAMiSt">
+                    <div class="d-block">
+                        <div class="splitter-section-container">
+                            <div class="splitter-section description-section">
+                                <div class="splitter-section-name">Details</div>
+                                <div class="splitter-section-content">
+                                    <div class="splitter-section-content-inner clearfix">
+                                        <div id="task-description" data-ui-test="task-details-description">
+                                            <p class=" kKZuUH"> | {{ selectJobPostData.detail }}
+                                                <span style="float: left;">-</span>
+                                                <span style="float: left;">Due date: {{
+                                                    selectJobPostData.time_range.title }}</span>
+                                            </p>
+                                            <img [src]="imageulr + selectJobPostData.id" class="w-50"/>
+                                            <div class="bubbles"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jCkizU"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kAwIUM"><button type="button" data-ui-test="read-more-toggle" class=" kmYAKK hiTBtw">Less
+                        <div class="cHuJhJ"><svg width="20px" height="14px" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 16.86a.9.9 0 01-.61-.25l-8-8a.86.86 0 011.22-1.22l7.39 7.4 7.39-7.4a.86.86 0 011.22 1.22l-8 8a.9.9 0 01-.61.25z">
+                                </path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+
+            <div data-ui-test="offers-section" *ngFor="let offer of selectJobPostData.total_question">
+                <div class="splitter-section offers-section">
+                    <div class="splitter-section-name">Questions</div>
+                </div>
+                <div class="splitter-section-content">
+                    <div class="splitter-section-content-inner clearfix">
+                        <div class="bid-replies">
+                            <div class="ddWwbI">
+                                <div class="coOKcj">
+                                    <div class="clttww">
+                                        <div class="kHLJSl">
+                                            <div class="UserInfo__UserInfoWrapper-ddysav-0 kzmnST"><a
+                                                    class="kbxwxQ krnNqd ffgnQ" href="#" alt="profile image"></a>
+                                                <div class="cmXQDc"><a data-ui-test="user-info-name-link"
+                                                        class="kbxwxQ gJwIUb jEedBL" href="#">{{
+                                                        offer.question_by.first_name }} {{ offer.question_by.last_name }}</a>
+                                                    <div class="emVaRl">
+                                                        <div class="lnfldP">
+                                                            <svg width="16" height="16" class="elJCm"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                                                </path>
+                                                            </svg><svg width="16" height="16" class="elJCm"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                                                </path>
+                                                            </svg><svg width="16" height="16" class="elJCm"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                                                </path>
+                                                            </svg><svg width="16" height="16" class="elJCm"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                                                </path>
+                                                            </svg><svg width="16" height="16" class="elJCm"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="ejtZxF">
+                                                            <span class="fZeAcH">4.9</span><span
+                                                                class="dtfDvf">(39)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div display="flex" class="kEGABt">
+                                                        <div class=" cNNRgh">
+                                                            <span class="jlHIAM"
+                                                                data-ui-test="percentage-text">96%</span>
+                                                        </div><span class="gCZiE">Jobs Completed</span><span
+                                                            class="cCtTwZ">
+                                                            <button aria-expanded="false" aria-label="Toggle tooltip"
+                                                                type="button" class="btwrXE bg-light border-0">
+                                                                <div class="bEPgej">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24">
+                                                                        <path
+                                                                            d="M12 1.25A10.75 10.75 0 1022.75 12 10.76 10.76 0 0012 1.25zm.62 15.92a2.08 2.08 0 01-1.73-.75 2.9 2.9 0 01-.34-2.32l.63-3.1h-.26a.75.75 0 110-1.5h1.17a.74.74 0 01.73.9L12 14.44a1.51 1.51 0 00.07 1.06.65.65 0 00.54.17.75.75 0 110 1.5zm.75-9.49a.75.75 0 01-1.5 0v-.1a.75.75 0 011.5 0z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </div>
+                                                            </button>
+                                                            <div class="dudtlX">
+                                                                <span class="fFXyfO">
+                                                                    <p class="jWFQmg">
+                                                                        The percentage of accepted tasks this Tasker
+                                                                        has completed</p>
+                                                                </span>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cduPQK">
+                                        <div class="comm-body-wrapper">
+                                            <div class="iyyxHC">
+                                                <div class="cfrOmH">
+                                                    <div>
+                                                        <p class="bvCieg" data-ui-test="user-4315093-comment">
+                                                            {{ offer.detail }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hKYTgY" data-ui-test="offer-meta-info"><span class=" zVEHU"><span
+                                                class="fxukJn">about
+                                                2 hours ago</span><a href="#" class="kXUWgJ cGkxNZ"
+                                                data-ui-test="bid-reply-link"><span><svg width="12" height="12"
+                                                        class="fvrCBN" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M16.79 11.25h-11l3.69-3.72a.75.75 0 00-1.06-1.06l-5 5a.75.75 0 000 1.06l5 5a.74.74 0 00.53.22.73.73 0 00.53-.22.75.75 0 000-1.06l-3.72-3.72h11A1.25 1.25 0 0118 14v6a.75.75 0 001.5 0v-6a2.75 2.75 0 00-2.71-2.75z">
+                                                        </path>
+                                                    </svg><span>Reply</span></span></a></span><button
+                                            class="llSIxF bg-light border-0" data-ui-test="report-offer"><span
+                                                class="gWgQtX">Report</span><svg width="14" height="13"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M20.51 5.49a.82.82 0 00-1 .07 3.35 3.35 0 01-4.62 0 4.87 4.87 0 00-5.23-1L10 3.29a.83.83 0 10-1.59-.47L3.15 20.71a.83.83 0 00.55 1 1 1 0 00.24 0 .83.83 0 00.79-.59l1.93-6.52c.43-.33 2.72-1.91 4.78 0a4.7 4.7 0 003.3 1.39 5.61 5.61 0 003.54-1.37.88.88 0 00.24-.39l2.33-7.89a.81.81 0 00-.34-.85zM17 13.6a3.27 3.27 0 01-4.44-.12 4.8 4.8 0 00-3.35-1.39 5.53 5.53 0 00-1.8.32l1.7-5.73a3.59 3.59 0 014.66.1A4.67 4.67 0 0018.7 7.9z">
+                                                </path>
+                                            </svg></button></div>
+                                </div>
+                            </div>
+                            <div class="beZKcP" data-ui-test="bid-replies">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div data-ui-test="offers-section">
+                <div class="splitter-section offers-section">
+                    <div class="splitter-section-name">Ask Questions</div>
+                </div>
+                <div class="splitter-section-content">
+                    <div class="splitter-section-content-inner clearfix">
+                        <div class="bid-replies">
+
+                            <div class="pt-4" style="border-top: 1px solid rgb(231, 235, 251)">
+                                <p class="dqQizt">Please don't share personal info – insurance won't apply to tasks not done through !</p>
+                                <div class="add-comm-form anchovy-form" data-ui-test="comment-form">
+                                    <div class="loaderific-not-loading"></div>
+                                    <div class="avatar-img">
+                                        <img src="../../../assets/img/person-1.png" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="text-area">
+                                        <textarea [(ngModel)]="offerText" placeholder="Ask a question" maxlength="1500" class="w-100"></textarea>
+                                        <div class="footer">
+                                            <div class="gqwHfR mx-1">
+                                                <div class="attachment-input-holder">
+                                                    <div class="attachment-input"
+                                                        data-ui-test="upload-attachment-container">
+                                                        <form method="post" enctype="multipart/form-data">
+                                                            <input type="file" data-ui-test="upload-attachment-input"
+                                                                name="">
+                                                        </form>
+                                                        <i class="bi bi-paperclip"></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="right">
+                                                <span class="count">{{ offerText.length }} / 1500</span>
+                                                <button class="bwyjcv" data-ui-test="add-comment-send-button"
+                                                    (click)="saveQuestion()">Send</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title text-center">Make an Offer</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    
+        <div class=" p-5">
+            <div class="w-20">
+                <h3 class="text-center">Your Offer</h3>
+                <div class="offer-box">
+                    <div class="doller-box">$</div>
+                    <input type="number" [(ngModel)]="offerAmount" class="offer-amounts">
+                </div>
+            </div>    
+            <div class="w-20 mt-2">                   
+                <textarea class="form-control" [(ngModel)]="offerNote" placeholder="Add Notes" style="border: solid 2px #8d8d8d;"></textarea>
+            </div>          
+        </div>
+        
+        <div class="offer-button">
+            <button type="button" (click)="saveOffer()" class="Button__StyledButton-sc-117jcbc-0 cHLbqz w-75">Make an offer</button>
+        </div>
+
+        <!-- <div class="offer-bottom">
+            <div class="service-tax">
+                <span>Service Fee</span>
+                <span>-$25.80</span>
+            </div>
+            <div class="service-tax">
+                <span>GST</span>
+                <span>-$2.80</span>
+            </div>
+        </div> -->
+
+        <!-- <hr>
+
+        <div class="offer-final">
+            <div class="final-amount">
+                <span>You'll Receive</span>
+                <span>$100.62</span>
+            </div>
+        </div> -->
+
+  </div>
+</ng-template>
+
+
+<ng-template #report>
+    <div class="modal-body text-center p-5">
+  
+      <div id="">
+        
+        <div class="form-group">
+          <label for="">Description</label>
+          <textarea class="form-control" [(ngModel)]="reportNote"></textarea>
+        </div>
+  
+      </div>
+  
+      <button type="button" class="btn btn-success mt-3 ml-3" (click)="addReport()">Add</button>
+      <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+    </div>
+  </ng-template>

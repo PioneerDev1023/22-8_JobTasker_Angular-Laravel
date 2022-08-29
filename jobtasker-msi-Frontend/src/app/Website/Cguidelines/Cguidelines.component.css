@@ -1,0 +1,21 @@
+#aboutus {
+  background-image: url(../../../assets/images/aboutus/about_us.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.first-heading, .second-heading {
+  color: #004aad;
+}
+
+.btn-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+/*# sourceMappingURL=Cguidelines.component.css.map */

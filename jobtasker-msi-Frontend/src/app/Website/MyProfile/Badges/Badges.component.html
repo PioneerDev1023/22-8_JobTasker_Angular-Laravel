@@ -1,0 +1,85 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Add License Badges</h3>
+  </section>
+</header>
+<section class="p-5" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <button class="btn btn-success" (click)="openModal(template)" >Add</button>
+  </div>
+  <div class="py-2">
+    <div class="row" *ngIf="BadgeList">
+      <div class="col-md-4 mb-3" *ngFor="let item of BadgeList">
+        <div class="card shadow"><img [src]="imageUrl + item.id" alt="{{ item.first_name }}" class="card-img-top">
+          <div class="card-body">
+            
+            <h4>License: {{ item.lic_badge }}</h4>
+            <h6>License Number : {{ item.lic_number }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<ng-template #template>
+  <div class="modal-body text-center p-5">
+
+    <div id="">
+      
+      <div class="form-group">
+        <label for="">Select License Badges</label>
+        <select class="form-control" [(ngModel)]="Lic_badge">
+          <option value="Electrical">Electrical</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="Gas Fitting">Gas Fitting</option>
+          <option value="Trades Insurance">Trades Insurance</option>
+          <option value="Working With Children">Working With Children</option>
+          <option value="Asbestos Removal">Asbestos Removal</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="">First Name</label>
+        <input class="form-control" [(ngModel)]="First_name">
+      </div>
+
+      <div class="form-group">
+        <label for="">Last Name</label>
+        <input class="form-control" [(ngModel)]="Last_name">
+      </div>
+
+      <div class="form-group">
+        <label for="">Jobtasker Email</label>
+        <input class="form-control" [(ngModel)]="Jt_email">
+      </div>
+
+      <div class="form-group">
+        <label for="">License Number</label>
+        <input class="form-control" [(ngModel)]="Lic_number">
+      </div>
+
+      <div class="form-group">
+        <label for="">License Expiry</label>
+        <input class="form-control" [(ngModel)]="Lic_exp">
+      </div>
+
+      <div class="form-group">
+        <label for="">License Restrictions</label>
+        <input class="form-control" [(ngModel)]="Lic_rest">
+      </div>
+
+      <div class="form-group">
+        <label for="">Photo</label>
+        <input type="file" class="form-control"  (change)="fileEvent($event)" />
+      </div>
+
+    </div>
+
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="addbadges()" *ngIf="!isUpdate">Add</button>
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="updateBadges()" *ngIf="isUpdate">Update</button>
+    <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+  </div>
+</ng-template>

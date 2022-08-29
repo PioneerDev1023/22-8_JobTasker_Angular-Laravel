@@ -1,0 +1,31 @@
+#aboutus {
+    background-image: url(../../../assets/images/aboutus/about_us.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.first-heading, .second-heading {
+    color: #004aad;
+}
+.btn-bottom {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .section-header {
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        h2{
+            margin-top: 20px !important;
+        }
+    }
+    .btn-bottom{
+        margin-top: 20px !important;
+        .btn-read-more {
+            padding: 10px 15px !important;
+        }
+    }
+  
+}

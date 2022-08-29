@@ -1,0 +1,29 @@
+h2 {
+  text-align: center;
+}
+
+h6 {
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  height: 57px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px;
+}
+
+.blog-cat {
+  background-color: #d1d1d1;
+  color: #515151;
+  font-size: 10px;
+  padding: 5px 5px;
+  border-radius: 7px;
+  margin: 0;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+/*# sourceMappingURL=Blogs.component.css.map */

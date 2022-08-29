@@ -1,0 +1,79 @@
+.offer-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: solid 2px #8d8d8d;
+  height: 50px;
+  width: 277px;
+  margin: auto;
+}
+
+.doller-box {
+  font-size: 20px;
+  padding: 10px 15px;
+  border-right: solid 1px;
+}
+
+input.offer-amounts {
+  border-width: 0;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+}
+
+input.offer-amounts:focus-visible {
+  border-width: 0;
+}
+
+.offer-bottom {
+  padding: 20px;
+}
+
+.offer-bottom .service-tax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+}
+
+.offer-bottom .service-tax span {
+  color: #8d8d8d;
+}
+
+.offer-bottom .service-tax:last-child {
+  margin-top: 10px;
+}
+
+.offer-final {
+  padding: 5px 20px;
+}
+
+.offer-final .final-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20px;
+}
+
+.offer-final .final-amount span {
+  color: #1596AF;
+}
+
+.offer-button {
+  width: 183px;
+  margin: auto;
+  position: absolute;
+  top: 225px;
+  left: 41%;
+}
+
+.iyyxHC {
+  width: 100%;
+}
+/*# sourceMappingURL=searchTask.component.css.map */

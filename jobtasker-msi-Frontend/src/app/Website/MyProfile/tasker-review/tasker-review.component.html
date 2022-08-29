@@ -1,0 +1,33 @@
+<section class="pt-3 pb-0 mx-4 notification-settings" style="border-top: 1px solid rgb(231, 235, 251)" *ngIf="reviews">
+
+
+    <div *ngFor="let item of reviews" class="card p-4 mt-1 mb-1">
+        <div class="card-header">
+            <h6 class="notification-label">
+                <div class="row">
+                    <div class="col-md-10 offer_by">
+                        <h6>Job - {{item.what_do_you}}</h6>
+                        <h6>Poster - {{item.name}}</h6>
+                        <div class="emVaRl">
+                            <div class="lnfldP" *ngFor='let in of counter(item.review_rating) ;let i = index'>
+                                <svg width="16" height="16" class="elJCm" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.2 8.16l4.74.73a1.23 1.23 0 01.67 2.11l-3.46 3.28a1.23 1.23 0 00-.37 1.1l.77 4.68a1.24 1.24 0 01-1.82 1.29L12.5 19.1a1.28 1.28 0 00-1.16 0l-4.27 2.17A1.25 1.25 0 015.27 20l.85-4.68a1.19 1.19 0 00-.34-1.09l-3.41-3.4a1.23 1.23 0 01.71-2.1l4.75-.64a1.26 1.26 0 00.95-.67l2.16-4.24a1.25 1.25 0 012.24 0l2.09 4.28a1.22 1.22 0 00.93.7z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h6>
+        </div>
+        
+        <div class="card-body">
+            <div class="row">
+                <p>
+                    {{item.review}} 
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

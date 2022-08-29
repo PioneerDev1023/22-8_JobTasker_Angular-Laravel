@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,OAAO;CACtB;;AACD,AAAA,SAAS,CAAA;EACL,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "PrivacyPolicy.component.scss"
+    ],
+    "names": [],
+    "file": "PrivacyPolicy.component.css"
+}

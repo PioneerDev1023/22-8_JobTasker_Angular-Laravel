@@ -1,0 +1,54 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Add Bank</h3>
+  </section>
+</header>
+<section class="p-5" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <button class="btn btn-success" (click)="openModal(template)" *ngIf="!myBank">Add</button>
+    <button class="btn btn-success" (click)="openModal(template)" *ngIf="myBank">Update</button>
+  </div>
+  <div class="py-2" *ngIf="myBank">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4>Accont Title : {{ myBank.account_title }}</h4>
+            <h6>Account No : {{ myBank.account_no }}</h6>
+            <h6>BSB : {{ myBank.bsb }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<ng-template #template>
+  <div class="modal-body text-center p-5">
+
+    <div id="">
+      
+      <div class="form-control">
+        <label for="">Account holder name</label>
+        <input class="form-control" [(ngModel)]="AccountTitle">
+      </div>
+
+      <div class="form-control">
+        <label for="">Account number</label>
+        <input class="form-control" [(ngModel)]="AccountNo">
+      </div>
+
+      <div class="form-control">
+        <label for="">BSB</label>
+        <input class="form-control" [(ngModel)]="Bsb">
+      </div>
+
+    </div>
+
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="addPayment()" *ngIf="!isUpdate">Add</button>
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="updatePayment()" *ngIf="isUpdate">Update</button>
+    <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+  </div>
+</ng-template>

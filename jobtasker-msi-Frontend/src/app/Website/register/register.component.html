@@ -1,0 +1,94 @@
+<div class="main">
+  <section class="signup">
+      <div class="container" id="c2">
+          <div class="signup-content pb-2">
+              <div class="signup-form">
+                  <h2 class="form-title mb-2">Sign Up</h2>
+                  <form [formGroup]="fg" (ngSubmit)="save(fg)" #f="ngForm">
+                  <input type="hidden" formControlName="id">
+                  <div class="form-group login-input">
+                    <label for="Firstname"><i class="zmdi zmdi-account material-icons-name p-3"></i></label>
+                    <input type="text" formControlName="first_name" class="form-control" name="first_name" id="Firstname" placeholder="First Name" required="" control-id="ControlID-2">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="Lastname"><i class="zmdi zmdi-account material-icons-name p-3"></i></label>
+                    <input type="text" formControlName="last_name" class="form-control" name="lastname" id="Lastname" placeholder="Last Name" required="" control-id="ControlID-3">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="mobilenumber"><i class="zmdi zmdi-phone p-3"></i></label>
+                    <input type="number" formControlName="phone_number" class="form-control" name="phone" id="mobilenumber" placeholder="Phone number" required="" control-id="ControlID-4">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="email"><i class="zmdi zmdi-email p-3"></i></label>
+                    <input type="email" formControlName="email" name="email" class="form-control" id="email" placeholder="Email" required="" control-id="ControlID-5">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="label-183"><i class="zmdi zmdi-pin p-3"></i></label>
+                    <input type="text" autocomplete="off" formControlName="postcode" spellcheck="false" class=" form-control TextInput__StyledInput-sc-8dpq00-1 dvowrP typeahead__input" data-ui-test="location-input" name="suburb" placeholder="Suburb or Postcode" id="label-183" value="" required="" control-id="ControlID-6">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="state"><i class="zmdi zmdi-city p-3"></i></label>
+                    <input type="dropdown" formControlName="state" class="form-control" name="state" id="state" placeholder="State" required="" control-id="ControlID-7">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="abn"><i class="zmdi zmdi-pin p-3"></i></label>
+                    <input type="text" formControlName="abn" class="form-control" name="abn" id="abn" placeholder="Abn" required="" control-id="ControlID-9">
+                  </div>
+
+                  <div class="form-group login-input">
+                    <label for="pass"><i class="zmdi zmdi-lock p-3"></i></label>
+                    <input type="password" formControlName="password" class="form-control" name="password" id="pass" placeholder="Create Password" required="" control-id="ControlID-8">
+                  </div>
+
+                  <!-- <div class="form-group">
+                      <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                      <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" />
+                  </div> -->
+                  <!-- <div class="form-group mb-0">
+                      <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                      <label for="agree-term" class="label-agree-term mt-0"><span><span></span></span>I agree all
+                          statements in <a href="#" class="term-service">Terms of service</a></label>
+                  </div> -->
+                  <div class="form-group form-button mb-1">
+                    <div class="form-group form-button mb-1">
+                      <button type="submit" class="btn btn-primary btn-group-vertical buttonweb" control-id="ControlID-9">
+                        <span class="text-white"> Create Account</span>
+                      </button>
+                    </div>
+                  </div>
+                  <span class="social-label">or continue with</span>
+                  <div class="social-login">
+                    <ul class="socials m-auto">
+                      <li><a (click)="signInWithFB()" target="_blank"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                      <!-- <li><a href="https://www.icloud.com/" target="_blank"><i class="display-flex-center zmdi bg-light">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M16.366 0c.142 1.286-.37 2.583-1.143 3.512-.762.928-2.024 1.654-3.262 1.559-.167-1.262.452-2.583 1.167-3.404.785-.929 2.13-1.62 3.238-1.667zm3.99 7.513c-.254.159-2.382 1.495-2.36 4.177.036 3.333 2.917 4.44 2.964 4.44a11.97 11.97 0 01-1.523 3.13c-.917 1.345-1.87 2.679-3.37 2.703-.724.017-1.207-.192-1.71-.41-.522-.225-1.065-.46-1.92-.46-.908 0-1.48.245-2.03.48-.474.202-.932.398-1.577.425-1.452.06-2.547-1.452-3.476-2.785-1.892-2.726-3.333-7.714-1.392-11.083.964-1.678 2.678-2.738 4.547-2.761.805-.02 1.587.29 2.272.561.52.207.984.39 1.359.39.332 0 .766-.17 1.278-.373.81-.32 1.816-.718 2.924-.638.714.06 2.726.274 4.035 2.19z"></path></svg>
+                      </i></a></li> -->
+                      <li><a  #loginRef><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" formControlName="agreeterm" control-id="ControlID-10">
+                    <label for="agree-term" class="label-agree-term">Please don't send me tips or  marketing via email or sms.</label>
+                  </div>
+
+                </form>
+              </div>
+              <!-- <div class="signup-image">
+                  <figure><img src="../assets/img/signup-image.jpg" alt="sing up image"></figure>
+                  <a href="../login.html" class="signup-image-link"><u>Already have an account?</u></a>
+              </div> -->
+          </div>
+          <div class="text-center pb-2">
+              <p class="Text__StyledTypographyComponent-sc-35e02v-0 bfXubR ">By signing up, I agree to JobTasker's&nbsp;<a href="/terms-conditions" target="_blank" rel="noreferrer">Terms &amp; Conditions</a>,&nbsp;<a href="/guidelines/" target="_blank" rel="noreferrer">Community Guidelines</a>&nbsp;&amp;&nbsp;<a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.&nbsp;</p></div>
+      </div>
+
+  </section>
+
+
+</div>

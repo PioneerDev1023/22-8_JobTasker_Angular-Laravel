@@ -1,0 +1,393 @@
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up" class="first-heading">Hire locals for any Job/Task</h1>
+          <h2 data-aos="fade-up" class="second-heading" data-aos-delay="400">Earn money performing jobs/tasks</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a [routerLink]="['/post-task']"
+                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Post a Job</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+
+  <main id="main">
+    <section id="values" class="values">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <h2>How JobTasker works</h2>
+          <p>JobTasker is completely free,  no booking fees, no commission, no service fee and no hidden cost.
+          </p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="valuesi text-center">
+              <div class="box">
+                <img src="../../assets/img/v-2.jpg" class="img-fluid" alt="">
+              </div>
+              <h3>Post your Job/Task</h3>
+              <p>Describe the Job/Task properly to receive quotes for free</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="valuesi text-center">
+              <div class="box">
+                <img src="../../assets/img/v-3.jpg" class="img-fluid" alt="">
+              </div>
+              <h3>Compare offers</h3>
+              <p>Get quotes, compare and chat with experts about your Job/Task</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="valuesi text-center">
+              <div class="box">
+                <img src="../../assets/img/v-1.jpg" class="img-fluid" alt="">
+              </div>
+              <h3>Choose the right business</h3>
+              <p>Hire the right business or expert and release payment upon completion</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 text-center">
+            <a [routerLink]="['/post-task']"
+              class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>Post a Job/Task</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <h2>Need something done?</h2>
+          <p>JobTasker connects you to local experts and businesses to get that Job/Task Done</p>
+        </header>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/removelist.jpg" class="img-fluid" />
+              </div>
+              <h4>Removalist</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/cleaner.jpg" class="img-fluid" />
+              </div>
+              <h4>Cleaner</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/gardning.jpg" class="img-fluid" />
+              </div>
+              <h4>Gardener</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/handyman.jpg" class="img-fluid" />
+              </div>
+              <h4>Handyman</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/photography.jpg" class="img-fluid" />
+              </div>
+              <h4>Photographer</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="count-box">
+              <div class="icon-img">
+                <img src="../../assets/img/more.jpg" class="img-fluid" />
+              </div>
+              <h4>More</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients" class="clients">
+      <div class="" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Popular projects done on JobTasker</h2>
+
+        </header>
+
+        <swiper [slidesPerView]="4" [spaceBetween]="50" [autoplay]="{delay:3000, disableOnInteraction: false}" [loop]="true" *ngIf="taskerList">
+
+          <ng-template swiperSlide *ngFor="let item of taskerList">
+
+            <div class="col-lg-12 service 1" *ngIf="item.profile.categories.length > 0">
+              <div class="one-line">
+                <h5> {{ item.profile.categories[0].category.title }} </h5>
+              </div>
+              <div class="content-column d-flex">
+                <!--    <div class="img"><img src="assets/img/user.jpg" width="150" class="img-fluid" /></div>-->
+                <div class="img">
+                  <img src="../../assets/img/avatar_men.png" class="img-fluid" />
+                </div>
+                <div class="content">
+                  <p>{{ item.name }}</p>
+                </div>
+                <div class="dvamt">${{ item.Cost }}
+                </div>
+              </div>
+            </div>
+
+          </ng-template>
+
+          
+
+        </swiper>
+
+        <swiper [slidesPerView]="4" [spaceBetween]="50" [autoplay]="{delay:4000, disableOnInteraction: false}" [loop]="true">
+
+          <ng-template swiperSlide *ngFor="let item of taskerList">
+
+            <div class="col-lg-12 service 2" *ngIf="item.profile.categories.length > 0">
+              <div class="one-line">
+                <h5> {{ item.profile.categories[0].category.title }} </h5>
+              </div>
+              <div class="content-column d-flex">
+                <!--    <div class="img"><img src="assets/img/user.jpg" width="150" class="img-fluid" /></div>-->
+                <div class="img">
+                  <img src="../../assets/img/avatar_men.png" class="img-fluid" />
+                </div>
+                <div class="content">
+                  <p>{{ item.name }}</p>
+                </div>
+                <div class="dvamt">${{ item.Cost }}
+                </div>
+              </div>
+            </div>
+
+          </ng-template>
+
+          
+
+        </swiper>
+
+      </div>
+
+    </section>
+
+    <section id="highlight" class="highlight">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header-dark col-">
+          <!-- <h2>Highlights of JobTasker</h2>
+          <p>What makes us standout</p> -->
+          <h2>What makes us standout</h2>
+        </header>
+
+        <div class="row gy-4" data-aos="fade-left">
+          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="highlights text-center">
+              <div class="box">
+                <img src="../../assets/img/completely-free.png" class="img-fluid" alt="">
+              </div>
+              <h3>Completely free</h3>
+              <p>Unlimited free quotes, no service fee, no booking fee, and no commission</p>
+              <!-- <div class="mt-4 text-white">
+                <ul class="text-white text-left">
+                  <li>Free Unlimited Quotes.</li>
+                  <li>No booking fee.</li>
+                  <li>No commission.</li>
+                  <li>No service fee.</li>
+                  <li>100% free to use.</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="highlights text-center">
+              <div class="box">
+                <img src="../../assets/img/security.png" class="img-fluid" alt="">
+              </div>
+              <h3>Secure & easy Payment</h3>
+              <p>You can only release payment when the Job/Task is completed</p>
+            </div>
+          </div>
+          <!-- <div class="col-lg-3 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="highlights text-center">
+              <div class="box">
+                <img src="../../assets/img/insurance.png" class="img-fluid" alt="">
+              </div>
+              <h3>Insurance Offer</h3>
+              <p>Certain jobs/tasks Completed on JobTasker are covered by insurance</p>
+            </div>
+          </div> -->
+          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+            <div class="highlights text-center">
+              <div class="box">
+                <img src="../../assets/img/support.png" class="img-fluid" alt="">
+              </div>
+              <h3>Quick Support centre</h3>
+              <p>Our quick friendly support centre is always available to provide the support you need</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header col-12 justify-content-center align-items-center">
+          <h2>Be a Tasker</h2> 
+          <p>Leverage your skills and get jobs/tasks awarded to you to earn up to $5000 a month<br>
+            <b class="font-weight-bold">(no service fees, no booking free, and no commission)</b>
+
+            </p>
+
+          <div class="be_tasker_btn">
+            <a [routerLink]="['/register','tasker']"
+              class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>Sign up</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </header>
+        <!--  <div class="row gy-4">
+              <div class="col-6 col-lg-6">
+                <div class="capleft">Some Taskers</div>
+              </div>
+
+              <div class="col-6 col-lg-6 text-right">
+                  <div class="text-right">
+                        <a href="#" class="text-right btn-read-more ">
+                          <span>Sign up</span>
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                  </div>
+              </div>
+        </div>-->
+
+        <div class="row gy-4">
+          <div class="capleft">Featured Taskers</div>
+          <div class="col-lg-6 col-md-6 col-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="../../assets/img/testi-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Angela</h4>
+                <span>Photographer</span>
+                <span>Cleaner</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+
+                <img src="../../assets/img/testi-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Bright</h4>
+                <span>Handy Man</span>
+                <span>Delivery</span>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="app-promotion" class="app-promotion">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-6 col-md-6 col-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class=" col-10  ">
+              <h3 class="">Manage your jobs/tasks on the go</h3>
+              <p class="mt-4">Get instant notification of new job requests, quotes, replies and much more with the JobTasker app</p>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <img src="../../assets/images/android_playstore_button.png" class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <img src="../../assets/images/ios_store_button.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-div">
+              <img src="../../assets/img/mobileimgw.png" class="img-fluid" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="recent-blog-posts" class="recent-blog-posts">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="custom-section-header h2">
+          <h2>News, Articles and more</h2>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-4 col-12" *ngFor="let item of blogPost">
+            <div class="post-box text-center">
+              <div class="post-img">
+                <img [src]="picUrl + item.image" class="img-fluid" alt="">
+              </div>
+              <h3 class="post-title">{{ item.title }} </h3>
+              <span class="blog-cat">{{ item.category.title }}</span>
+              <h6> {{ item.created_at | date }} </h6>
+              <span class="card-text blogs-text" [innerHTML]="item.detail"></span>
+              <a [routerLink]="['/blogsdetail', item.id]" class="btn btn-primary">Read More..</a>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-lg-12 text-center mt-15">
+            <a [routerLink]="['/blogs']"
+              class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>More on Blog</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>

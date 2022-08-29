@@ -1,0 +1,16 @@
+.offer_by {
+  line-height: 40px;
+}
+
+.jobAssigned {
+  background-color: #c9ffd8 !important;
+}
+
+label {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+}
+/*# sourceMappingURL=JobOffers.component.css.map */

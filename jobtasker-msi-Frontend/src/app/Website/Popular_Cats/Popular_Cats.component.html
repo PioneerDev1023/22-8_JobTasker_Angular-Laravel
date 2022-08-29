@@ -1,0 +1,41 @@
+
+<section class="shadow d-flex align-items-center main-top" style="padding-top: 30px;" id="newtask">
+  <div class="container" id="post1">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+          <header class="section-header text-start pt-4 pb-4">
+              <p class="text-center">Browse services in all categories</p>
+              <h2 class="mt-5">All Categories</h2>
+
+              <section class="contact_us mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="contact_inner">
+                                <div class="row">
+
+                                    <div class="col-xl-4 col-lg-6 mb-4" *ngFor="let item of taskerList">
+                                      <div class="card" [routerLink]="['/search-job', item.profile.categories[0].category.title]">
+                                        <div class="card-body">
+                                          <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                              <p class="fw-bold mb-1">{{ item.profile.categories[0].category.title  }}</p>
+                                              <p class="text-muted mb-0">Select Taskers From This Category</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    
+                                  </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               
+          </header>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,275 @@
+<div *ngIf="isLoading" class="loader-wrapper">
+  <div class="loader-body">
+      <div class="loader">
+          <div></div><div></div><div></div>
+      </div>
+  </div>
+</div>
+<header id="header" class="header">
+  <div class="container-fluid">
+    <div class="row d-flex d-flex align-items-center justify-content-between">
+      <div class="col-lg-8 col-8">
+        <div class="menu d-flex align-items-center">
+          <a href="" class="logo ">
+            <img [src]="site_logo_url ? site_logo_url: '../../assets/img/logo.png'" alt="">
+          </a>
+          <ul>
+            <a class="firstlist" [routerLink]="['/be-a-tasker']" *ngIf="!isAuth" >Be a Tasker</a>
+            <a class="" [routerLink]="['/search-job']">Search Jobs</a>
+            <a class="" href="#about">How it works</a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-4">
+        <nav id="navbar" class="navbar">
+
+          <ul class="onelist" *ngIf="!isAuth">
+            <li><a class="getstarted scrollto" [routerLink]="['/post-task']" >Post a job</a></li>
+            <li><a class="nav-link scrollto" [routerLink]="['/register','tasker']">Sign Up</a></li>
+            <li><a class="nav-link scrollto" [routerLink]="['/login']">Log In</a></li>
+          </ul>
+          <ul class="onelist" *ngIf="isAuth">
+            <!-- <li><a class="nav-link scrollto" href="#">Help</a></li> -->
+            <li><a class="getstarted scrollto mr-3" [routerLink]="['/post-task']" *ngIf="!isTasker">Post a job</a></li>
+            <li><a class="nav-link scrollto" href="#">Notifications</a></li>
+            <li><a class="nav-link scrollto" href="#">Messages</a></li>
+            <li class="btn-group dropdown mx-3"><img [src]="url" class="eYiGNz">
+              <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px;"></button>
+              <ul class="dropdown-menu p-0" style="left: -12vw;" *ngIf="user">
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile']"> {{ profile_name }} </a></li>
+                <li class="d-flex"><a class="gqTvXB" href="/profile" *ngIf="isPoster">My Poster Dashboard</a></li>
+                <li class="d-flex"><a class="gqTvXB" href="/profile" *ngIf="isTasker">My Tasker Dashboard</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/tpayment-history']" *ngIf="isTasker">Payment History</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/payment-history']" *ngIf="isPoster">Payment History</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/paymentmethod']" *ngIf="isPoster">Payment Method</a></li>
+                <!-- <li class="d-flex"><a class="gqTvXB" href="#">Refer a Friend</a> -->
+
+
+                <li class="btn-group dropdown d-flex px-1 m-0">
+                  <span class="gqTvXB" style="min-width: 200px; font-size: 15px; color: #013289; list-style: none; font-weight: 600; overflow: hidden;">Settings</span>
+                  <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px; float: right;">
+                    <svg class="dropdown-toggle gazpaa" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M14.012 11.61a.5.5 0 010 .78l-3.7 2.96a.5.5 0 01-.812-.39V9.04a.5.5 0 01.812-.39z">
+                      </path>
+                    </svg>
+                  </button>
+                  <!-- <ul class="dropdown-menu w-100 p-0 m-0"> -->
+                  <ul class="dropdown-menu p-0 w-100" style="overflow-y: scroll; max-height: 50vh;">
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/skills']">Skills</a></li>
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/badges']" *ngIf="isTasker">Badges</a></li>
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Task alerts</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/portfolio']" *ngIf="isTasker">Portfolio</a></li>
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/change-password']">Change Password</a></li>
+                  </ul>
+                </li>
+
+                <li class="btn-group dropdown d-flex px-1 m-0">
+                  <span class="gqTvXB" style="min-width: 200px; font-size: 15px; color: #013289; list-style: none; font-weight: 600; overflow: hidden;">Help Topics</span>
+                  <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px; float: right;">
+                    <svg class="dropdown-toggle gazpaa" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M14.012 11.61a.5.5 0 010 .78l-3.7 2.96a.5.5 0 01-.812-.39V9.04a.5.5 0 01.812-.39z">
+                      </path>
+                    </svg>
+                  </button>
+                  <!-- <ul class="dropdown-menu w-100 p-0 m-0"> -->
+                  <ul class="dropdown-menu p-0 w-100" style="overflow-y: scroll; max-height: 30vh;">
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Help</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" href="/guidelines">Community guidelines</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="/terms-conditions">Terms &amp; Conditions</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="/privacy-policy">Privacy policy</a></li>
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Blog</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" href="/contact-us">Contact us</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="http://www.jobtasker.com/about-us">About us</a></li>
+                  </ul>
+                </li>
+                <li class="d-flex"><a class="gqTvXB" (click)="logout()">Logout</a></li>
+                <!-- <form id="logout-form" action="http://www.jobtasker.com/logout" method="POST" style="display: none;">
+                      <input type="hidden" name="_token" value="4B9NnTw5hqKq6yVbVsAZP70gPF1QseNAOa2l2sIi">
+                </form> -->
+
+              </ul>
+            </li>
+            <!-- <li><a class="nav-link scrollto" href="../signup/signup.html">Sign Up</a></li> -->
+            <!-- <li><a class="nav-link scrollto" href="../login.html">Log In</a></li> -->
+          </ul>
+          <ul class="mobilelist"  [ngClass]="status ? 'active' : 'notActive'" *ngIf="!isAuth">
+            <li><a class="getstarted scrollto" [routerLink]="['/register','tasker']" (click)="clickEvent()">Be A Tasker</a></li>
+            <li> <a class="nav-link scrollto" [routerLink]="['/search-job']" (click)="clickEvent()">Search Jobs</a></li>
+            <li><a class="nav-link scrollto" href="#about" (click)="clickEvent()">How it Works</a></li>
+            <li><a class="getstarted scrollto" [routerLink]="['/post-task']" (click)="clickEvent()">Post a job</a></li>
+            <li><a class="nav-link scrollto" [routerLink]="['/register','tasker']" (click)="clickEvent()">Sign Up</a></li>
+            <li><a class="nav-link scrollto" [routerLink]="['/login']" (click)="clickEvent()">Log In</a></li>
+          </ul>
+          <ul class="mobilelist" [ngClass]="status ? 'active' : 'notActive'" *ngIf="isAuth">
+            <!-- <li><a class="nav-link scrollto" href="#">Help</a></li> -->
+            <li><a class="getstarted scrollto mr-3" [routerLink]="['/post-task']" *ngIf="!isTasker">Post a job</a></li>
+            <li><a class="nav-link scrollto" href="#">Notifications</a></li>
+            <li><a class="nav-link scrollto" href="#">Messages</a></li>
+            <li class="btn-group dropdown mx-3"><img [src]="url" class="eYiGNz">
+              <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px;"></button>
+              <ul class="dropdown-menu p-0" style="left: -12vw;" *ngIf="user">
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile']"> {{ profile_name }} </a></li>
+                <li class="d-flex"><a class="gqTvXB" href="/profile" *ngIf="isPoster">My Poster Dashboard</a></li>
+                <li class="d-flex"><a class="gqTvXB" href="/profile" *ngIf="isTasker">My Tasker Dashboard</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/tpayment-history']" *ngIf="isTasker">Payment History</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/payment-history']" *ngIf="isPoster">Payment History</a></li>
+                <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/paymentmethod']" *ngIf="isPoster">Payment Method</a></li>
+                <!-- <li class="d-flex"><a class="gqTvXB" href="#">Refer a Friend</a> -->
+
+
+                <li class="btn-group dropdown d-flex px-1 m-0">
+                  <span class="gqTvXB" style="min-width: 200px; font-size: 15px; color: #013289; list-style: none; font-weight: 600; overflow: hidden;">Settings</span>
+                  <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px; float: right;">
+                    <svg class="dropdown-toggle gazpaa" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M14.012 11.61a.5.5 0 010 .78l-3.7 2.96a.5.5 0 01-.812-.39V9.04a.5.5 0 01.812-.39z">
+                      </path>
+                    </svg>
+                  </button>
+                  <!-- <ul class="dropdown-menu w-100 p-0 m-0"> -->
+                  <ul class="dropdown-menu p-0 w-100" style="overflow-y: scroll; max-height: 50vh;">
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/skills']">Skills</a></li>
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/badges']" *ngIf="isTasker">Badges</a></li>
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Task alerts</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/portfolio']" *ngIf="isTasker">Portfolio</a></li>
+                    <li class="d-flex"><a class="gqTvXB" [routerLink]="['/profile/change-password']">Change Password</a></li>
+                  </ul>
+                </li>
+
+                <li class="btn-group dropdown d-flex px-1 m-0">
+                  <span class="gqTvXB" style="min-width: 200px; font-size: 15px; color: #013289; list-style: none; font-weight: 600; overflow: hidden;">Help Topics</span>
+                  <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 500; font-size: 14px; float: right;">
+                    <svg class="dropdown-toggle gazpaa" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M14.012 11.61a.5.5 0 010 .78l-3.7 2.96a.5.5 0 01-.812-.39V9.04a.5.5 0 01.812-.39z">
+                      </path>
+                    </svg>
+                  </button>
+                  <!-- <ul class="dropdown-menu w-100 p-0 m-0"> -->
+                  <ul class="dropdown-menu p-0 w-100" style="overflow-y: scroll; max-height: 30vh;">
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Help</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" href="/guidelines">Community guidelines</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="/terms-conditions">Terms &amp; Conditions</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="/privacy-policy">Privacy policy</a></li>
+                    <!-- <li class="d-flex"><a class="gqTvXB" href="#">Blog</a></li> -->
+                    <li class="d-flex"><a class="gqTvXB" href="/contact-us">Contact us</a></li>
+                    <li class="d-flex"><a class="gqTvXB" href="http://www.jobtasker.com/about-us">About us</a></li>
+                  </ul>
+                </li>
+                <li class="d-flex"><a class="gqTvXB" (click)="logout()">Logout</a></li>
+                <!-- <form id="logout-form" action="http://www.jobtasker.com/logout" method="POST" style="display: none;">
+                      <input type="hidden" name="_token" value="4B9NnTw5hqKq6yVbVsAZP70gPF1QseNAOa2l2sIi">
+                </form> -->
+
+              </ul>
+            </li>
+            <!-- <li><a class="nav-link scrollto" href="../signup/signup.html">Sign Up</a></li> -->
+            <!-- <li><a class="nav-link scrollto" href="../login.html">Log In</a></li> -->
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle" (click)="clickEvent()"></i>
+        </nav><!-- .navbar -->
+      </div>
+
+    </div>
+  </div>
+</header><!-- End Header -->
+
+<router-outlet></router-outlet>
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer mt-5" *ngIf="setting_data">
+  <div class="footer-top">
+    <div class="container top-footer">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-12 footer-info">
+          <h4>Who are JobTasker?</h4>
+          <p>Jobtasker pty ltd is a sydney-based Australian company, which provides an online and mobile platform that connect users to local experts and businesses to get jobs/tasks done. users can post jobs/tasks and local experts will bid.</p>
+          <p>We also provide avenue for users (including businesses)  to earn money doing jobs/tasks posted on jobtasker.</p>
+        </div>
+
+        <div class="col-lg-4 col-6 footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/about-us">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/faqs">Help & FAQs</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/privacy-policy">Privacy policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/terms-conditions">Terms and conditions</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/contact-us">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-6 footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a [routerLink]="['/post-task']">Post a Job/task</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/faqs">How It Works</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a [routerLink]="['/register','tasker']">Be a Tasker</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a [routerLink]="['/popular_categories']">Popular Categories</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a [routerLink]="['/search-job']">Search Jobs/Tasks</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a [routerLink]="['/blogs']">Blog and Articles</a></li>
+          </ul>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4">
+          <i class="bi bi-geo-alt"></i> {{setting_data.address? setting_data.address:''}}
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex footer-contact text-center text-md-start">
+            <img src="../../assets/img/app-store.png" class="img-fluid" width="100px" />
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="social-links my-3">
+            <a [href]="setting_data.twitter? setting_data.twitter:'#'" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a [href]="setting_data.facebook? setting_data.facebook:'#'"  class="facebook"><i class="bi bi-facebook"></i></a>
+            <a [href]="setting_data.instagram? setting_data.instagram:'#'"  class="instagram"><i class="bi bi-instagram"></i></a>
+            <a [href]="setting_data.linkedin? setting_data.linkedin:'#'"  class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container last-footer">
+      <div class="col-12  copyright">
+        <div class="row">
+          <!-- <div class=" col-lg-4  col-md-12       text-left ">
+                  <a href="#"><img src="http://www.jobtasker.com/assets/img/white-logo.png" width="150" /></a>
+                </div> -->
+          <div class="col-lg-12 d-flex justify-content-center">
+            <a href="#" class="text-white"><strong><span>{{setting_data.site_footer? setting_data.site_footer:''}}</span></strong></a>
+
+            <a href="" style="margin-left: 10px;"><strong> All Right Reserved</strong></a>
+          </div>
+        </div>
+      </div>
+      <!--  <div class="col-12 col-lg-4  copyright">
+                 <div class="row">
+                <div class=" col-12 text-left ">
+                   <a href="#"><img src="assets/img/white-logo.png" width="150" /></a>
+                </div>
+                <div class=" col-12 col-lg-4 text-center">
+                   <a href="#"><strong><span>JobTasker PVT ltd</span></strong>. All Rights Reserved</a>
+                </div>
+                <div class=" col-12 col-lg-4 captermserv">
+                   <a href="#"><strong><span>Terms Of Services</span></strong></a>
+                </div>
+              </div>
+              </div>-->
+    </div>
+  </div>
+
+
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>

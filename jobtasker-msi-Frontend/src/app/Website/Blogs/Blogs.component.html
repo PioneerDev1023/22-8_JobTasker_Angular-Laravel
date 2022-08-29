@@ -1,0 +1,65 @@
+<!-- ======= Hero Section ======= -->
+<!-- <section id="aboutus" class="hero d-flex align-items-center">
+  
+</section> -->
+<!-- End Hero -->
+
+<!-- <section class="shadow d-flex align-items-center main-top" style="padding-top: 30px;" id="newtask">
+  <div class="container" id="post1">
+    <div class="container aos-init aos-animate" data-aos="fade-up" *ngIf="blogPost">
+      <header class="section-header text-start pt-4 pb-4">
+        <h2 class="mt-5">Blogs Posts</h2>
+      </header>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of blogPost">
+
+          <div class="card">
+            <img [src]="picUrl + item.image" class="card-img-top" alt="{{ item.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }} <span class="blog-cat">{{ item.category.title }}</span></h5>
+              
+              <h6> {{ item.created_at | date }} </h6>
+              
+              <p class="card-text" [innerHTML]="item.detail"></p>
+              <a [routerLink]="['/blogsdetail', item.id]" class="btn btn-primary">Read More..</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</section> -->
+
+<section id="recent-blog-posts" class="recent-blog-posts">
+
+  <div class="container" data-aos="fade-up">
+
+    <header class="custom-section-header h2">
+      <h2>News, Articles and more</h2>
+    </header>
+
+    <div class="row">
+      <div class="col-lg-4 col-12" *ngFor="let item of blogPost">
+        <div class="post-box text-center">
+          <div class="post-img">
+            <img [src]="picUrl + item.image" class="img-fluid" alt="">
+          </div>
+          <h3 class="post-title">{{ item.title }} </h3>
+          <span class="blog-cat">{{ item.category.title }}</span>
+          <h6> {{ item.created_at | date }} </h6>
+          <p class="card-text" [innerHTML]="item.detail"></p>
+          <a [routerLink]="['/blogsdetail', item.id]" class="btn btn-primary">Read More..</a>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</section>

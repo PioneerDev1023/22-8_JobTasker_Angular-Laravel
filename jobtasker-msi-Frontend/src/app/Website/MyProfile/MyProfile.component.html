@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="ekIeEf" *ngIf="profile">
+
+    <div class="gFyfac">
+        <div class="jkxlQW">
+            <div class="enphzs">
+                <div class="iTSIvj"><a href="#" class="jIYccb">
+                        <div class="kxCHQO"><img [src]="url" alt="No Profile Image"
+                                class="AvatarSection__Img-cglbuz-2 kGJLpu">
+                            <svg class="dyrWDK" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.28 3.7a3.33 3.33 0 00-4.6 0L4.05 15.37a.81.81 0 00-.2.35L2.8 19.94a1.06 1.06 0 001 1.31 1.15 1.15 0 00.26 0l4.24-1.09a.69.69 0 00.35-.2L20.28 8.3a3.25 3.25 0 000-4.6zM5.13 16.81a3.83 3.83 0 012.05 2.09l-2.75.68zm14.09-9.57L8.45 18A5.2 5.2 0 006 15.55L16.74 4.76a1.8 1.8 0 012.48 0 1.76 1.76 0 010 2.48z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="gAzrE">{{ profile.first_name }} {{ profile.last_name }}</div>
+                    </a></div>
+            </div>
+            <div>
+                <div class="Menu__FolderItemsWrapper-sc-1v7wzmp-6 kwaFpr">
+                    <!-- <a class="gqTvXB" href="/account/dashboard/">Home</a> -->
+                    <a class="gqTvXB" [routerLink]="['/profile']">Profile</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/job-list']" *ngIf="isPoster">My Posted Jobs</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/pcjob-list']" *ngIf="isPoster">My Completed Jobs</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/tcjob-list']" *ngIf="isTasker">My Completed Jobs</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/my-tasker-job']" *ngIf="isTasker">My Job as tasker</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/poster_reviews']" *ngIf="isPoster">My Reviews</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/tasker_reviews']" *ngIf="isTasker">My Reviews</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/payment-history']" *ngIf="isPoster">Payment history</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/tpayment-history']" *ngIf="isTasker">Payment history</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/profile-category']" *ngIf="isTasker">My Categroy</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/paymentmethod']" *ngIf="isPoster">Payment methods</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/add-bank']" *ngIf="isTasker">Add Bank</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/dispute']">Dispute</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/update-profile']">Update Profile</a>
+                    <a class="gqTvXB" [routerLink]="['/profile/change-password']">Change Password</a>
+                </div>
+                <!-- <div class="btn-group dropup dZVVpS" id="dropupdisable">
+
+                    <button type="button" class="btn dropdown-toggle gazpaa text-start p-0 m-0"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(84, 90, 119);      text-decoration: none;     font-weight: 500;      font-size: 14px;">
+                        Settings
+                        <svg class="dropdown-toggle gazpaa" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M14.012 11.61a.5.5 0 010 .78l-3.7 2.96a.5.5 0 01-.812-.39V9.04a.5.5 0 01.812-.39z">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu w-100 p-0 m-0">
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account">Account</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/skills">Skills</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/badges">Badges</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/task-alert">Task alerts</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/notification">Notification
+                                settings</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/mobile">Mobile</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/portfolio">Portfolio</a></li>
+                        <li><a class="gqTvXB" href="http://www.jobtasker.com/account/changepwd">Change Password</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="Menu__FolderItemsWrapper-sc-1v7wzmp-6 cFDjdX">
+      <a class="gqTvXB" href="Profile.html">Account</a>
+      <a class="gqTvXB" href="Skills.html">Skills</a>
+      <a class="gqTvXB" href="Badges.html">Badges</a>
+      <a class="gqTvXB" href="TasksAlerts.html">Task alerts</a>
+      <a class="gqTvXB" href="NotificationSettings.html">Notification settings</a>
+      <a class="gqTvXB" href="Mobile.html">Mobile</a>
+      <a class="gqTvXB" href="Portfolio.html">Portfolio</a><a class="gqTvXB"
+        href="ChangePassword.html">Change Password</a>
+    </div> -->
+                <!-- <div class="btn-group dropup">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropup
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <li><a class="dropdown-item" href="#">Menu item</a></li>
+      </ul>
+    </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="AccountPageLayout__PageColumn-sc-1nlbyp7-3 fukbHB">
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+
+
+
+    <!-- </div>
+</div> -->
+</div>

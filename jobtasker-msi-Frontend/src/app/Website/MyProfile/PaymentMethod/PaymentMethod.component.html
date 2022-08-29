@@ -1,0 +1,37 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Payment Methods</h3>
+  </section>
+</header>
+<section class="p-5" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <button class="btn btn-success" (click)="openModal(template)">Add</button>
+  </div>
+  <div class="py-2" *ngIf="paymentMethods">
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let item of paymentMethods">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4>Card : ...{{ item.last4 }}</h4>
+            <h6>Expiry : {{ item.exp_month }}/{{ item.exp_year }}</h6>
+
+            <img src="../../../../assets/images/visa.png" *ngIf="item.brand == 'visa'">
+            <img src="../../../../assets/images/master.png" *ngIf="item.brand == 'mastercard'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<ng-template #template>
+  <div class="modal-body text-center p-5">
+
+    <div id="card-element"></div>
+
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="addPayment()">Add</button>
+    <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+  </div>
+</ng-template>

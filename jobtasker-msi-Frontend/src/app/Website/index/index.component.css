@@ -1,0 +1,56 @@
+.first-heading, .second-heading {
+  color: #004aad;
+  background-color: #fff;
+  border: solid 1px;
+  padding: 10px;
+  display: inline-block !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: self-start;
+      -ms-grid-row-align: self-start;
+      align-self: self-start;
+  border-radius: 10px;
+}
+
+.first-heading {
+  font-size: 28px;
+}
+
+.second-heading {
+  font-size: 22px;
+}
+
+.be_tasker_btn {
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .section-header {
+    padding-bottom: 30px;
+  }
+  .valuesi {
+    padding: 0 10px;
+  }
+  .be_tasker_btn {
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .first-heading, .second-heading {
+    -webkit-box-align: unset !important;
+        -ms-flex-align: unset !important;
+            align-items: unset !important;
+  }
+}
+
+.blogs-text {
+  max-height: 100px;
+  overflow: hidden;
+}
+/*# sourceMappingURL=index.component.css.map */

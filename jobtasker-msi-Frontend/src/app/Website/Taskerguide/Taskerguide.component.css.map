@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,OAAO;CACtB",
+    "sources": [
+        "Taskerguide.component.scss"
+    ],
+    "names": [],
+    "file": "Taskerguide.component.css"
+}

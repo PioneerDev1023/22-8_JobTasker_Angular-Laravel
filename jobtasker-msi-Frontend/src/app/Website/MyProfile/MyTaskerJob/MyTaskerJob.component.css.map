@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,KAAK;CACjB",
+    "sources": [
+        "MyTaskerJob.component.scss"
+    ],
+    "names": [],
+    "file": "MyTaskerJob.component.css"
+}

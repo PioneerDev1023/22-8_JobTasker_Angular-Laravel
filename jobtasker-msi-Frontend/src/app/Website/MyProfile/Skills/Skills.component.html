@@ -1,0 +1,45 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Skils</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <div class="d-flex">      
+    </div>
+    <div class="px-1">
+      <div class="d-flex pt-1">
+        <h6 class="fs-4 px-2" style="font-weight: 500;">Your skills</h6>
+        <!-- <h6 class="my-2 pb-0">20% service fee excl. GST</h6> -->
+      </div>
+      <div class="card px-2 mt-3">
+        <div class="card-body">
+
+          <div class="skillSet" *ngIf="perAddedSkills">
+            <span class="badge bg-secondary mt-2" *ngFor="let item of perAddedSkills" >{{ item.title }}</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="d-flex pt-1">
+        <h6 class="fs-4 px-2" style="font-weight: 500;">Select Your skills</h6>
+        <!-- <h6 class="my-2 pb-0">20% service fee excl. GST</h6> -->
+      </div>
+      <div class="card px-2">
+        <div class="card-body">
+          <label for="">Select Skills</label>
+          <div class="skillSet">
+            <span class="badge bg-secondary mt-2" *ngFor="let item of states" (click)="selectSkills(item.id, item.title)" >{{ item.title }}</span>
+          </div>
+          <label class="mt-3">Add Skills</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter Your Skill" [(ngModel)]="newSkill">
+            <span class="input-group-text" id="basic-addon2" (click)="addNewSkill()">Add</span>
+          </div>
+          <button class="btn firstlist mt-2" (click)="updateSkill()">Update</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

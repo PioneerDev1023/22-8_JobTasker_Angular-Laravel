@@ -1,0 +1,41 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Chat</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+
+    <div class="chat-pane">
+      <div #chatcontent [scrollTop]="scrolltop" class="chat-content">
+        <div class="message-box" *ngFor="let chat of chats">
+          
+          <div>
+            <div class="chat-message">
+              <div class="right-bubble" [ngClass]="{'right-bubble': chat.nickname === nickname, 'left-bubble': chat.nickname !== nickname}">
+                <span class="msg-name" *ngIf="chat.nickname === nickname">Me</span>
+                <span class="msg-name" *ngIf="chat.nickname !== nickname">{{chat.nickname}}</span>
+                <span class="msg-date"> at {{chat.date | date:'short'}}</span>
+                <p text-wrap>{{chat.message}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="sticky-footer">
+        <form class="message-form" [formGroup]="chatForm" (ngSubmit)="onFormSubmit(chatForm.value)">
+          <div class="input-group">
+            <input placeholder="Enter message here" formControlName="message" class="form-control">
+            <!-- <mat-error>
+              <span *ngIf="!chatForm.get('message').valid && chatForm.get('message').touched">Enter your message</span>
+            </mat-error> -->
+            <button type="submit" [disabled]="!chatForm.valid" class="btn btn-success">
+              Send
+            </button>
+          </div>
+        </form>
+      </footer>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,138 @@
+<section class="shadow d-flex align-items-center" style="padding-top: 30px;" id="newtask" *ngIf="step == 1">
+  <div class="container" id="post1">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+
+          <header class="section-header text-start pt-4 pb-4" style="margin-left: 10vw;">
+              <h2>Post a job/task</h2>
+          </header>
+          <div class="px-lg-5 col-8 aos-init aos-animate" style="margin-left: 10vw;min-height:300px" data-aos="fade-up">
+
+              <div class="py-5 text-center aos-init aos-animate" data-aos="fade-up"> 
+                  <label class="py-2"><strong>
+                          <h5> Please register your account before post a task or sign in your account.</h5>
+                      </strong></label>                     
+              </div>
+       
+              <div style="text-align:center;" class="mt-1">
+                  <a (click)="changeStep(2)" class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center px-5" style="border-radius: 0%; border-style: none;">
+                      <span>Sign Up</span>
+                      <i class="bi bi-arrow-right"></i>
+                  </a>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="shadow d-flex align-items-center" style="padding-top: 30px;" id="newtask" *ngIf="step == 2">
+    <div class="container" id="post1">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+  
+  
+            <header class="section-header text-start pt-4 pb-4 text-center ">
+                <h2>Post a job</h2>
+                <p>(We use this to connect you with people or business who work in your area)</p>
+            </header>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">What do you need to get done?</label>
+                        <input type="text" [(ngModel)]="what_do_you" name="jopType" placeholder="eg. Home relocation, cleaning, delivery" class="form-control" id="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Where do you need this job done? 
+                        </label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
+                            <input type="text" [(ngModel)]="where_do_you" class="form-control" placeholder="Enter suburb or postcode" aria-label="Username" aria-describedby="basic-addon1"  matInput
+                            matGoogleMapsAutocomplete
+                            (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                            (onLocationSelected)="onLocationSelected($event)">
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">When do you need this job done?
+                        </label>
+                        <input type="date" [(ngModel)]="required_Date" name="jopType" placeholder="eg. Home relocation, cleaning, delivery" class="form-control" id="">
+                    </div>
+                </div>
+                <div class="col-md-5 mt-4">
+                    <span class="btn btn-success" [ngClass]="{'btn-dark': required_time_range == 1}" (click)="changeTypeRange(1)">Before 10am</span>
+                    <span class="btn btn-success" [ngClass]="{'btn-dark': required_time_range == 2}" (click)="changeTypeRange(2)">10am - 2pm</span>
+                    <span class="btn btn-success" [ngClass]="{'btn-dark': required_time_range == 3}" (click)="changeTypeRange(3)">2pm - 6pm</span>
+                    <span class="btn btn-success" [ngClass]="{'btn-dark': required_time_range == 4}" (click)="changeTypeRange(4)">after - 6pm</span>
+                </div>
+            </div>
+
+            <div style="text-align:center;" class="mt-3">
+                <a (click)="changeStep(3)" class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center px-5" style="border-radius: 0%; border-style: none;">
+                    <span>Next </span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+  <section class="shadow d-flex align-items-center" style="padding-top: 30px;" id="newtask" *ngIf="step == 3">
+    <div class="container" id="post1">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+  
+  
+            <header class="section-header text-start pt-4 pb-4 text-center ">
+                <h2>Post a job
+                </h2>
+                <p>(We use this to connect you with people or business who work in your area)
+                </p>
+            </header>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Describe the job in details? 
+                        </label>
+                        <textarea name="jopType"  [(ngModel)]="detail" placeholder="outline key details of the job" class="form-control" id=""></textarea>
+                        <input type="file" class="btn btn-read-more mt-1" value="Upload Photo"  (change)="fileEvent($event)" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Budget amount<br><small style="font-size:13px">(Final amount can be negotiated)</small></label>
+                        <input type="number" [(ngModel)]="budget" name="jopType" placeholder="$" class="form-control" id="">
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;" class="mt-3 d-flex justify-content-around">
+                <a (click)="changeStep(2)" class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center px-5" style="border-radius: 0%; border-style: none;">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>back </span>
+                    
+                </a>
+                <a (click)="getQuotes()" class="text-center btn-read-more d-inline-flex align-items-center justify-content-center align-self-center px-5" style="border-radius: 0%; border-style: none;">
+                    <span> Get quotes </span>
+                    <i class="bi bi-check-circle-fill"></i>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+  </section>

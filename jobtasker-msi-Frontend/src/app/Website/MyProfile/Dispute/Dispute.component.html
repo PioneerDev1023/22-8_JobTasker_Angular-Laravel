@@ -1,0 +1,142 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Dispute</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <div>
+      <tabset>
+        <tab heading="You Created Dispute" id="tab1">
+          
+          <div *ngIf="filledByMe">
+            <div *ngFor="let item of filledByMe">
+              <div class="notification-setting">
+                  <h3 class="notification-label">
+                    <div class="row">
+                      <div class="col-md-10 offer_by" >
+                        Against : {{ item.filled_against.first_name }} {{ item.filled_against.last_name }}
+                        
+                      </div>
+                    </div>
+                  </h3>
+                  <hr>
+                  <h1> {{ item.job_post.what_do_you }} </h1>
+                  <div class="margin-10-top">
+                      <div class="notification-description">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.detail }}</p>
+                        <div class="d-flex">
+                          <div class="btn btn-dark">
+                            Budget : {{ item.job_post.budget }}
+                          </div>
+                          <div style="width: 10px;"></div>
+                          <div class="btn btn-warning">
+                            Offer : {{ item.job_post.win_offer.amount }}
+                          </div>
+                          <!-- <div style="width: 10px;"></div>
+                          <div class="btn btn-warning">
+                            Total Offer : {{ item.total_offer.length }}
+                          </div>
+                          <div style="width: 10px;"></div>
+                          <div class="btn btn-secondary">
+                            Total Question : {{ item.total_question.length }}
+                          </div> -->
+                        </div>
+                      </div>
+                      <div class="notification-options">
+                          <div class="checkbox-item disabled">
+                            <a type="button" class="btn btn-outline-success" (click)="startChat(item.assign_no)">Message</a>
+                          </div>
+                          <!--<div class="checkbox-item">   
+                            <button type="button" class="btn btn-outline-info"  (click)="openModal(templatecompletejob, item.id, item.offer_by.id)">Completed</button>
+                          </div>                
+                          <div class="checkbox-item" *ngIf="jobOffer.assign_to_id == null">   
+                            <button type="button" class="btn btn-outline-success"  (click)="openModal(template, item.id, item.offer_by.id)">Assign</button>
+                          </div>
+                          <div class="checkbox-item mt-2" *ngIf="jobOffer.payment_request == 1">   
+                            <button type="button" class="btn btn-outline-secondary"(click)="checkout(item.amount)">Make Payment</button>
+                          </div>
+                          <div class="checkbox-item mt-2"  (click)="openDisputeModal(dispute, item.job_post_id)">   
+                            <button type="button" class="btn btn-outline-secondary" >Dispute</button>
+                          </div> -->
+                          <!-- <div class="checkbox-item">
+                              <input type="checkbox" checked="">
+                              <label data-ui-test="terms-checkbox-label">Push</label>
+                          </div> -->
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </tab>
+        <tab heading="Dispute Against You">
+          
+          <div *ngIf="againestMe">
+            <div *ngFor="let item of againestMe">
+              <div class="notification-setting">
+                  <h3 class="notification-label">
+                    <div class="row">
+                      <div class="col-md-10 offer_by" >
+                        Create by : {{ item.filled_by.first_name }} {{ item.filled_by.last_name }}
+                        
+                      </div>
+                    </div>
+                  </h3>
+                  <hr>
+                  <h1> {{ item.job_post.what_do_you }} </h1>
+                  <div class="margin-10-top">
+                      <div class="notification-description">
+                        <p>{{ item.detail }}</p>
+                        <div class="d-flex">
+                          <div class="btn btn-dark">
+                            Budget : {{ item.job_post.budget }}
+                          </div>
+                          <div style="width: 10px;"></div>
+                          <div class="btn btn-warning">
+                            Offer : {{ item.job_post.win_offer.amount }}
+                          </div>
+                          <!-- <div style="width: 10px;"></div>
+                          <div class="btn btn-warning">
+                            Total Offer : {{ item.total_offer.length }}
+                          </div>
+                          <div style="width: 10px;"></div>
+                          <div class="btn btn-secondary">
+                            Total Question : {{ item.total_question.length }}
+                          </div> -->
+                        </div>
+                      </div>
+                      <div class="notification-options">
+                          <!-- <div class="checkbox-item disabled" *ngIf="jobOffer.assign_to_id != null">
+                            <a type="button" class="btn btn-outline-success" >Message</a>
+                          </div>
+                          <div class="checkbox-item">   
+                            <button type="button" class="btn btn-outline-info"  (click)="openModal(templatecompletejob, item.id, item.offer_by.id)">Completed</button>
+                          </div>                
+                          <div class="checkbox-item" *ngIf="jobOffer.assign_to_id == null">   
+                            <button type="button" class="btn btn-outline-success"  (click)="openModal(template, item.id, item.offer_by.id)">Assign</button>
+                          </div>
+                          <div class="checkbox-item mt-2" *ngIf="jobOffer.payment_request == 1">   
+                            <button type="button" class="btn btn-outline-secondary"(click)="checkout(item.amount)">Make Payment</button>
+                          </div>
+                          <div class="checkbox-item mt-2"  (click)="openDisputeModal(dispute, item.job_post_id)">   
+                            <button type="button" class="btn btn-outline-secondary" >Dispute</button>
+                          </div> -->
+                          <!-- <div class="checkbox-item">
+                              <input type="checkbox" checked="">
+                              <label data-ui-test="terms-checkbox-label">Push</label>
+                          </div> -->
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</section>

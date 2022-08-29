@@ -1,0 +1,15 @@
+#aboutus {
+    background-image: url(../../../assets/images/aboutus/about_us.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.first-heading, .second-heading {
+    color: #004aad;
+}
+.btn-bottom {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}

@@ -1,0 +1,76 @@
+<header>
+  <section class="py-0 my-2 py-md-2 pt-3" >
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Profile</h3>
+  </section>
+</header>
+
+<section class="section about-section gray-bg" id="about">
+  <div class="container" *ngIf="profile">
+      <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6">
+              <div class="about-text go-to">
+                  <h3 class="dark-color">{{ profile.first_name }} {{ profile.last_name }}</h3>
+                  <div class="row about-list">
+                      <div class="col-md-6">
+                          <div class="media">
+                              <label>Email</label>
+                              <p>{{ profile.email }}</p>
+                          </div>
+                          <div class="media">
+                              <label>State</label>
+                              <p>{{ profile.state }}</p>
+                          </div>
+                          <div class="media">
+                              <label>ABN</label>
+                              <p>{{ profile.abn }}</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="media">
+                              <label>Mobile</label>
+                              <p>{{ profile.phone_number }}</p>
+                          </div>
+                          <div class="media">
+                              <label>Post Code</label>
+                              <p>{{ profile.postcode }}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="about-avatar">
+                <img [src]="(url) ? url : '../../../../assets/img/avatar_men.png'" alt="No Profile Image" class="img" style="width:100%">
+              </div>
+          </div>
+      </div>
+      <div class="counter mt-5">
+          <div class="row">
+              <div class="col-6 col-lg-3">
+                  <div class="count-data text-center">
+                      <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                      <p class="m-0px font-w-600">Happy Clients</p>
+                  </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                  <div class="count-data text-center">
+                      <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                      <p class="m-0px font-w-600">Project Completed</p>
+                  </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                  <div class="count-data text-center">
+                      <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                      <p class="m-0px font-w-600">Projects Awarded</p>
+                  </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                  <div class="count-data text-center">
+                      <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                      <p class="m-0px font-w-600">Reviews</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

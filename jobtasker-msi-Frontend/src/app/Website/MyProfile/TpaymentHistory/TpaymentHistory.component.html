@@ -1,0 +1,51 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Payment History List</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4 notification-settings" style="border-top: 1px solid rgb(231, 235, 251)">
+
+  <div class="splitter-section" id="details-section">
+      <div class="splitter-section-content">
+          <div class="splitter-section-content-inner">
+              <h2>All Payments</h2>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="taskerPayments">
+    <div class="notification-setting" >
+      <table class="table align-middle mb-0 bg-white table-striped table-hover table-bordered">
+        <thead class="bg-light">
+          <tr>
+            <th>Sr. No</th>
+            <th>Payment Against Job</th>
+            <th>Assigned By</th>
+            <th>Budget</th>
+            <th>Paid At</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let row of taskerPayments; let i = index">
+
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>
+              <p class="fw-normal mb-1">{{ row.job_posts.what_do_you }}</p>
+            </td>
+            <td><p class="fw-normal mb-1">{{ row.paid_by.first_name }} {{ row.paid_by.last_name }}</p>
+              <!-- <p class="text-muted mb-0">{{ row.job_post.offer_by.email }}</p> -->
+            </td>
+            <td>${{ row.amount }}</td>
+            <td>{{ row.created_at }}</td>
+            <td *ngIf="row.prove_no">Paid</td>
+            <td *ngIf="!row.prove_no">Created</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      
+    </div>
+  </div>
+</section>

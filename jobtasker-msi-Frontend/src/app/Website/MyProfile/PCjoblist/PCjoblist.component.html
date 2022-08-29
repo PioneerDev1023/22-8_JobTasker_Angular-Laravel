@@ -1,0 +1,36 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Completed Job List</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4 notification-settings" style="border-top: 1px solid rgb(231, 235, 251)">
+
+  <div class="splitter-section" id="details-section">
+      <div class="splitter-section-content">
+          <div class="splitter-section-content-inner">
+              <h2>Following are the completed jobs </h2>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="jobList">
+    <div class="notification-setting" *ngFor="let item of jobList">
+        <h6 class="notification-label">{{ item.what_do_you }}</h6>
+        <div class="margin-10-top">
+            <div class="notification-description">
+              <p>{{ item.detail }}</p>
+              <div class="d-flex">
+                <div class="btn btn-dark">
+                 Awarded Budget : {{ item.budget }}
+                </div>
+                <div style="width: 10px;"></div>
+                <div class="btn btn-warning">
+                  Awarded To : {{ item.assign_by.first_name }} {{ item.assign_by.last_name }}
+                </div>
+                <div style="width: 10px;"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

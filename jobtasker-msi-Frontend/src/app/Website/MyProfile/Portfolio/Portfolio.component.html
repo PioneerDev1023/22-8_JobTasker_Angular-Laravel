@@ -1,0 +1,53 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Add Portfolio</h3>
+  </section>
+</header>
+<section class="p-5" style="border-top: 1px solid rgb(231, 235, 251)">
+  <div class="py-2">
+    <button class="btn btn-success" (click)="openModal(template)" >Add</button>
+  </div>
+  <div class="py-2">
+    <div class="row" *ngIf="portfolioList">
+      <div class="col-md-4 mb-3" *ngFor="let item of portfolioList">
+        <div class="card shadow"><img [src]="imageUrl + item.id" alt="{{ item.title }}" class="card-img-top">
+          <div class="card-body">
+            
+            <h4>Title : {{ item.title }}</h4>
+            <h6>Description : {{ item.description }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<ng-template #template>
+  <div class="modal-body text-center p-5">
+
+    <div id="">
+      
+      <div class="form-group">
+        <label for="">Porfolio Title</label>
+        <input class="form-control" [(ngModel)]="Title">
+      </div>
+
+      <div class="form-group">
+        <label for="">Description</label>
+        <textarea class="form-control" [(ngModel)]="Description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="">Photo</label>
+        <input type="file" class="form-control"  (change)="fileEvent($event)" />
+      </div>
+
+    </div>
+
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="addportfolio()" *ngIf="!isUpdate">Add</button>
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="updatePortfolio()" *ngIf="isUpdate">Update</button>
+    <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+  </div>
+</ng-template>

@@ -1,0 +1,88 @@
+<header>
+  <section class="py-1 my-2">
+    <h3 class="px-4" style="font-weight: 5  00; color: #014aac;">Job List</h3>
+  </section>
+</header>
+<section class="pt-3 pb-0 mx-4 notification-settings" style="border-top: 1px solid rgb(231, 235, 251)">
+
+  <div class="splitter-section" id="details-section">
+      <div class="splitter-section-content">
+          <div class="splitter-section-content-inner">
+              <h2>The following are the jobs </h2>
+          </div>
+      </div>
+  </div>
+  <div *ngIf="myJobs">
+    <div class="notification-setting" *ngFor="let item of myJobs">
+        <h6 class="notification-label">{{ item.what_do_you }}</h6>
+        <span *ngIf="item.payment_request == null" style="color:green">Awarded</span>
+        <div class="margin-10-top">
+            <div class="notification-description">
+              <p>{{ item.detail }}</p>
+              <div class="d-flex">
+                <div class="btn btn-dark">
+                  Budget : {{ item.budget }}
+                </div>
+                <div style="width: 10px;"></div>
+                <div class="btn btn-warning">
+                  Total Offer : {{ item.total_offer.length }}
+                </div>
+                <div style="width: 10px;"></div>
+                <div class="btn btn-secondary">
+                  Total Question : {{ item.total_question.length }}
+                </div>
+              </div>
+            </div>
+            <div class="notification-options">
+                 <div class="checkbox-item disabled" *ngIf="item.payment_request == null">
+                  <a type="button" class="btn btn-outline-success"(click)="deletingIndex=item.id; deletePop=pop" #pop="bs-popover" [popover]="deleteTemplate" placement="left" [outsideClick]="true">Payment Request</a>
+                </div>
+                <div class="checkbox-item">   
+                  <button type="button" class="btn btn-outline-secondary" (click)="openModal(template, item.id)">Dispute</button>
+                </div>
+                <!-- <div class="checkbox-item">
+                    <input type="checkbox" checked="">
+                    <label data-ui-test="terms-checkbox-label">Push</label>
+                </div> -->
+            </div>
+        </div>
+        <div class="container" *ngIf="item.status == 'COMPLETED' && !item.tasker_review">
+          <div class="row">
+            <div class="col-12">
+              <form #basicForm="ngForm" (ngSubmit)="review(basicForm.value, item.posted_by_id, item.id)">      
+                <ngx-star-rating name="review_rating" ngModel></ngx-star-rating> 
+                <div class="form-group mt-3">
+                  <label for="review">Review:</label>
+                  <textarea rows="2" ngModel name="review" placeholder="Enter Review" style="width: 100%;" required></textarea>
+                </div>
+                <div class="form-group form-button">
+                  <button class=" btn btn-primary px-1 py-1 buttonweb">
+                     <span class="text-white">Add Review</span> </button>
+                </div>
+              </form>
+            </div>
+          </div>  
+        </div> 
+    </div>
+  </div>
+</section>
+
+<ng-template #deleteTemplate>
+  <p>Are you sure to request for payment?</p>
+  <button class="btn btn-info btn-xs" (click)="deletePop.hide()">No</button>
+  <button class="btn btn-danger btn-xs" (click)="paymentRequest()" >Yes</button>
+</ng-template>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <label for="">Title</label>
+    <input name="deliveryTime" [(ngModel)]="title" class="form-control">
+
+    <label for="">Detail</label>
+    <textarea name="deliveryTime" [(ngModel)]="detail" class="form-control"></textarea>
+    
+    
+    <button type="button" class="btn btn-success mt-3 ml-3" (click)="createDispute()">Create</button>
+    <button type="button" class="btn btn-primary mt-3" (click)="dismiseModal()">Close</button>
+  </div>
+</ng-template>

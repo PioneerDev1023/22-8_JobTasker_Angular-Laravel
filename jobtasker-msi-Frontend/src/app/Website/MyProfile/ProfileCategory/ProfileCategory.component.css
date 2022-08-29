@@ -1,0 +1,15 @@
+.skillSet {
+  border: solid 1px #ddd;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.skillSet span {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.badge {
+  cursor: pointer;
+}
+/*# sourceMappingURL=ProfileCategory.component.css.map */

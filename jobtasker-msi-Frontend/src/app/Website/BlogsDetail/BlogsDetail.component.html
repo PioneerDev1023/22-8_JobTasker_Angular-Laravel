@@ -1,0 +1,32 @@
+<!-- ======= Hero Section ======= -->
+<section id="aboutus" class="hero d-flex align-items-center" *ngIf="blogDetail">
+  <img [src]="picUrl + blogDetail.image" class="card-img-top" alt="{{ blogDetail.title }}">
+</section>
+<!-- End Hero -->
+
+<section class="shadow d-flex align-items-center main-top" style="padding-top: 30px;" id="newtask">
+  <div class="container" id="post1">
+    <div class="container aos-init aos-animate" data-aos="fade-up" *ngIf="blogDetail">
+      <header class="section-header text-start pt-4 pb-4">
+        <h2 class="mt-5">{{ blogDetail.title }}</h2>
+        <p [innerHTML]="blogDetail.detail"></p>
+
+        <!-- <div class="comment-area mt-5" *ngIf="blogComments">
+          <div class="card mt-2" *ngFor="let item of blogComments">
+            <div class="card-body">
+              <h6> {{ item.commentby.name }} </h6>
+              <p class="date"> {{ item.created_at | date }} </p>
+              {{ item.detail }}
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mt-5">
+          <textarea class="form-control" aria-label="Comment" [(ngModel)]="comment"></textarea>
+          <span class="input-group-text" (click)="addComment()">Comment</span>
+        </div> -->
+      </header>
+
+    </div>
+  </div>
+</section>

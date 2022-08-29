@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "PostTask.component.scss"
+    ],
+    "names": [],
+    "file": "PostTask.component.css"
+}

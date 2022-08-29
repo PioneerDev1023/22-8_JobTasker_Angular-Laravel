@@ -1,0 +1,50 @@
+<div class="main">
+  <section class="sign-in">
+    <div class="container" id="c2">
+      <div class="signin-content">
+        <!-- <div class="signin-image">
+          <figure><img src="assets/img/signin-image.jpg" alt="sing up image"></figure>
+          <a href="./signup/signup.html" class="signup-image-link"><u>Don't have an account?</u></a>
+        </div> -->
+
+        <div class="signin-form">
+          <h2 class="form-title">Log In</h2>
+          <form [formGroup]="fg" (ngSubmit)="login(fg)" #f="ngForm">            
+            <div class="form-group login-input">
+              <label for="your_email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+              <input type="email" formControlName="email" name="email" id="your_email" placeholder="Email" required="" control-id="ControlID-2">
+            </div>
+            <div class="form-group login-input">
+              <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+              <input type="password" formControlName="password" name="password" id="your_pass" placeholder="Password" required="" control-id="ControlID-3">
+            </div>
+            <div class="form-group login-input">
+              <a [routerLink]="['/forgot-password']">
+                <p class="text-end">Forgot Password?</p>
+              </a>
+              <!-- <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+              <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label> -->
+            </div>
+            <div class="form-group form-button"><a href="index.html">
+              <button class=" btn btn-primary px-5 py-2 buttonweb" control-id="ControlID-4">
+                 <span class="text-white">Log In</span> </button></a>
+            </div>
+          </form>
+          <span class="social-label mt-4">or continue with</span>
+          <div class="social-login">
+            <ul class="socials">              
+              <li><a (click)="signInWithFB()"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+              <!-- <li><a href="http://www.jobtasker.com/login/icloud" target="_blank"><i class="display-flex-center zmdi bg-light">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M16.366 0c.142 1.286-.37 2.583-1.143 3.512-.762.928-2.024 1.654-3.262 1.559-.167-1.262.452-2.583 1.167-3.404.785-.929 2.13-1.62 3.238-1.667zm3.99 7.513c-.254.159-2.382 1.495-2.36 4.177.036 3.333 2.917 4.44 2.964 4.44a11.97 11.97 0 01-1.523 3.13c-.917 1.345-1.87 2.679-3.37 2.703-.724.017-1.207-.192-1.71-.41-.522-.225-1.065-.46-1.92-.46-.908 0-1.48.245-2.03.48-.474.202-.932.398-1.577.425-1.452.06-2.547-1.452-3.476-2.785-1.892-2.726-3.333-7.714-1.392-11.083.964-1.678 2.678-2.738 4.547-2.761.805-.02 1.587.29 2.272.561.52.207.984.39 1.359.39.332 0 .766-.17 1.278-.373.81-.32 1.816-.718 2.924-.638.714.06 2.726.274 4.035 2.19z">
+                      </path>
+                    </svg>
+                  </i></a></li> -->
+              <li><a  #loginRef><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

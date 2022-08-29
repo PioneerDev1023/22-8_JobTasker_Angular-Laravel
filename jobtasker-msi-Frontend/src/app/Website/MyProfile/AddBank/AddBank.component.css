@@ -1,0 +1,19 @@
+label {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.card-body {
+  position: relative;
+}
+
+.card-body img {
+  position: absolute;
+  width: 121px;
+  right: 10px;
+  top: 5px;
+}
+/*# sourceMappingURL=AddBank.component.css.map */
